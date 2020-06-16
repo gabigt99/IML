@@ -40,7 +40,7 @@ Tag* IML::readTag()
 		{
 			return createTag((tag.substr(0, 1) + tag.substr(2, 7)), 1);
 		}
-		throw ("Unvalid close tag is: " + tag);
+		throw ("Unvalid close tag: " + tag);
 	}
 	else
 	{
@@ -48,7 +48,7 @@ Tag* IML::readTag()
 		{
 			return createTag(tag, 0);
 		}
-		throw ("Unvalid open tag is: " + tag);
+		throw ("Unvalid open tag: " + tag);
 	}
 }
 
@@ -123,15 +123,15 @@ void IML::buildTree()
 	root = readTag();
 	if (root->getIsCloseTag() == 1)
 	{
-		throw (string)"An opening tag is expected, but it is a closing tag.";
+		throw (string)"An opening tag is expected.";
 	}
 	buildTreeHelper(root);
 	killSpaces();
 	if (in->peek() != EOF)
 	{
-		throw (string)"After the last closing tag there are more characters.";
+		throw (string)"Entering characters after closing the last tag is not allowed.";
 	}
-}
+}                 
 
 vector<double> IML::calculateTree()
 {
@@ -252,7 +252,7 @@ double IML::takeNumber()
 	}
 	if (!isNumber(number))
 	{
-		throw "Unvalid number is " + number;
+		throw "Unvalid number: " + number;
 	}
 	double value;
 	stringstream(number) >> value;
@@ -294,7 +294,7 @@ void IML::buildTreeHelper(Tag*& crrTag)
 	}
 	if (in->peek() == EOF)
 	{
-		throw (string)"There is no closing tag";
+		throw (string)"A closing tag is expected.";
 	}
 	Tag * nextTag = readTag();
 	if (nextTag->getIsCloseTag() && nextTag->getType() == crrTag->getType())

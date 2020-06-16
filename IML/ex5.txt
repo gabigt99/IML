@@ -1,1 +1,1 @@
-There is no closing tag
+A closing tag is expected.

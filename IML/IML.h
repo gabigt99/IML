@@ -21,7 +21,6 @@ public:
 	bool isNaturalNumber(string number);
 	bool isNumber(string number);
 	bool isDigits(string digits) const;
-	double fromStringToDoubleNumber(const stringstream tag);
 	double fromStringToDoubleNumber(string tag);
 	size_t fromStringToNaturalNumber(string tag);
 	double takeNumber();

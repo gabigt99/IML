@@ -1,1 +1,1 @@
-After the last closing tag there are more characters.
+Entering characters after closing the last tag is not allowed.

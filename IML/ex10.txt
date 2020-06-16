@@ -1,1 +1,1 @@
-Unvalid open tag is: <MAP-INC"">
+Unvalid open tag: <MAP-INC"">
