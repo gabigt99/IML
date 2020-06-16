@@ -7,10 +7,10 @@
 bool compare(istream& out, istream& expected)
 {
 	string outs;
-	string ex;
+	string expect;
 	getline(out, outs);
-	getline(expected, ex);
-	return outs == ex;
+	getline(expected, expect);
+	return outs == expect;
 }
 
 int main()
@@ -26,13 +26,13 @@ int main()
 		ofstream out(outFiles[i]);
 		try
 		{
-			IML k(in, out);
-			k.buildTree();
-			k.print(k.calculateTree());
+			IML iml(in, out);
+			iml.buildTree();
+			iml.print(iml.calculateTree());
 		}
-		catch (string str)
+		catch (string exception)
 		{
-			out << str;
+			out << exception;
 		}
 		out.close();
 		ifstream outin(outFiles[i]);

@@ -1,2 +1,10 @@
-﻿  IML.cpp
+﻿  pch.cpp
+  IML.cpp
+  MAP_INC.cpp
+  MAP_MLT.cpp
+  NUM.cpp
+  SRT_DST.cpp
+  SRT_SLC.cpp
+  Tag.cpp
+  Generating Code...
   IML.vcxproj -> D:\Университет\Gabi programi cpp\IML\Debug\IML.exe
